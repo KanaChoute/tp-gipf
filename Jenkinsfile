@@ -3,6 +3,9 @@ node {
     checkout scm
   }
   stage('test') {
+    steps {
+      
+    }
   }
   stage('couverture jacoco') {
   }
