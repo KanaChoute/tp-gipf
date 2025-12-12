@@ -2,20 +2,14 @@ node {
   stage('SCM') {
     checkout scm
   }
-  stage('update') {
-    steps {
-      sh './gradle w -D https.proxy.Host=proxy1-rech'
-      sh './gradle w -D https.proxy.Port=3128'
-    }
-  }
-  stage('test') {
-    steps {
-      sh 'npm run test'
-    }
-  }
-  stage('couverture jacoco') {
-  }
   stage('sonarqube') {
+    steps {
+      sh './gradlew sonar \
+  -Dsonar.projectKey=tp-gipf \
+  -Dsonar.projectName='tp-gipf' \
+  -Dsonar.host.url=http://127.0.0.1:9000 \
+  -Dsonar.token=sqp_7600c6b39f787650b99c00b7e6d94aa465e15fec'
+    }
   }
   stage('jar') {
   }
