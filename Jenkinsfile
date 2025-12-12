@@ -5,7 +5,7 @@ node {
   stage('gradle') {
     sh './gradlew 
     -Dhttps.proxyHost=proxy1-rech \
-    -Dhttps.proxyPort=3128''
+    -Dhttps.proxyPort=3128'
   }
   stage('sonarqube') {
       sh './gradlew sonar \
