@@ -4,7 +4,8 @@ node {
   }
   stage('update') {
     steps {
-      sh 'npm update'
+      sh './gradlew -D https.proxy.Host=proxy1-rech'
+      sh './gradlew -D https.proxy.Port=3128'
     }
   }
   stage('test') {
