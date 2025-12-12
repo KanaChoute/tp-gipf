@@ -4,6 +4,8 @@ node {
   }
   stage('sonarqube') {
       sh './gradlew sonar \
+  -Dhttps.proxy.Host=proxy1-rech \
+  -Dhttps.proxy.Port=3128 \
   -Dsonar.projectKey=tp-gipf \
   -Dsonar.projectName='tp-gipf' \
   -Dsonar.host.url=http://127.0.0.1:9000 \
