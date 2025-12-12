@@ -12,5 +12,7 @@ node {
     -Dhttps.proxyPort=3128'
   }
   stage('jar') {
+    sh 'make' 
+    archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
   }
 }
