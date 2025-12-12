@@ -4,7 +4,7 @@ node {
   }
   stage('test') {
     steps {
-      sh 'npm run test'
+      sh 'gradle run test'
     }
   }
   stage('couverture jacoco') {
