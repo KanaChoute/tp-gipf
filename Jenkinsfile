@@ -3,13 +3,11 @@ node {
     checkout scm
   }
   stage('sonarqube') {
-    steps {
       sh './gradlew sonar \
   -Dsonar.projectKey=tp-gipf \
   -Dsonar.projectName='tp-gipf' \
   -Dsonar.host.url=http://127.0.0.1:9000 \
   -Dsonar.token=sqp_7600c6b39f787650b99c00b7e6d94aa465e15fec'
-    }
   }
   stage('jar') {
   }
