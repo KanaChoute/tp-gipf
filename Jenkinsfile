@@ -4,7 +4,7 @@ node {
   }
   stage('update') {
     steps {
-      sh 'npm ci'
+      sh 'npm update'
     }
   }
   stage('test') {
