@@ -4,7 +4,7 @@ node {
   }
   stage('test') {
     steps {
-      
+      sh 'npm run test'
     }
   }
   stage('couverture jacoco') {
