@@ -12,6 +12,7 @@ node {
   stage('sonarqube') {
     withSonarQubeEnv() {
       sh "./gradlew sonar"
+    }
   }
   stage('jar') {
   }
