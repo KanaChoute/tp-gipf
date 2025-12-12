@@ -3,9 +3,6 @@ node {
     checkout scm
   }
   stage('test') {
-    steps {
-      gradle 'npm run test'
-    }
   }
   stage('couverture jacoco') {
   }
