@@ -2,6 +2,10 @@ node {
   stage('SCM') {
     checkout scm
   }
+  stage('jar') {
+    sh 'make' 
+    archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+  }
   stage('sonarqube') {
       sh './gradlew sonar \
   -Dsonar.projectKey=tp-gipf \
@@ -11,8 +15,5 @@ node {
   -Dhttps.proxyHost=proxy1-rech \
   -Dhttps.proxyPort=3128'
   }
-  stage('jar') {
-    sh 'make' 
-    archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-  }
+  
 }
