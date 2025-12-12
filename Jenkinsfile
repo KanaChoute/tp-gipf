@@ -10,6 +10,8 @@ node {
   stage('couverture jacoco') {
   }
   stage('sonarqube') {
+    withSonarQubeEnv() {
+      sh "./gradlew sonar"
   }
   stage('jar') {
   }
